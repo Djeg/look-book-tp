@@ -7,6 +7,10 @@
 /public/bundles/
 /var/
 /vendor/
+composer.lock
+symfony.lock
+package.json
+assets
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-bundle ###

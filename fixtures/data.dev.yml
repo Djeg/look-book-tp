@@ -1,0 +1,10 @@
+# Contient les fixtures de developement
+App\Entity\User:
+    admin:
+        email: admin@lookbook.com
+        # Password: admin
+        password: \$2y\$13\$E07hNm7q0vB4tL6wDZtUs.q9wuQ7HvB0q5hhtGmgAhjfb7ADmKRku
+        roles: ["ROLE_ADMIN"]
+        username: "Administrateur"
+        firstname: "Admin"
+        lastname: "Admin"

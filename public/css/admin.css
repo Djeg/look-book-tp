@@ -1,0 +1,95 @@
+main {
+    flex-direction: row;
+}
+
+/* ADMIN SIDEBAR */
+.sidebar {
+    width: 350px;
+    background-color: var(--color-black-coffee);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+}
+.sidebar.closed {
+    width: 80px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    padding: var(--mg-large) 0px;
+    font-size: var(--mg-xxl);
+}
+
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.sidebar .menu:not(.bottom) {
+    flex-grow: 2;
+}
+.sidebar .menu .item {
+    color: var(--color-white);
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    border-left: 0px solid var(--color-black-coffee);
+}
+.sidebar .menu .item:hover,
+.sidebar .menu .item.active {
+    color: var(--color-black-coffee);
+    background-color: var(--color-white);
+    border-left: 12px solid var(--color-black-coffee);
+}
+.sidebar .menu .item .ico {
+    font-size: var(--mg-big);
+    text-align: center;
+    margin: var(--mg-medium);
+}
+
+/* ADMIN CONTENT */
+
+.content {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--mg-medium);
+}
+
+/* ADMIN CARDS */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card-container .card {
+    flex-basis: 45%;
+    margin: var(--mg-small);
+    padding: var(--mg-medium);
+    border-radius: 5px;
+    background-color: var(--color-black-coffee);
+    color: var(--color-white);
+    text-decoration: none;
+    outline: none;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+    box-shadow: inset 0px 0px 0px var(--color-black-coffee);
+}
+.card-container .card:hover {
+    color: var(--color-black-coffee);
+    background-color: var(--color-white);
+    box-shadow: inset 0px 0px 5px var(--color-black-coffee-40);
+}
+.card-container .card .body {
+    text-align: center;
+    flex-grow: 2;
+    justify-content: center;
+}

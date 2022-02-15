@@ -1,0 +1,50 @@
+/*
+Contient l'intégralité des variables css du projet
+*/
+:root {
+    --color-black: rgb(37, 37, 37);
+    --color-black-coffee: #2f2422;
+    --color-black-coffee-40: rgba(47, 36, 34, 0.5);
+    --color-grey: #636964;
+    --color-cyan: #5c998c;
+    --color-beige: #e1e9d8;
+    --color-white: #fffceb;
+
+    --font-size: 16px;
+
+    --mg-small: 0.6rem;
+    --mg-medium: 0.8rem;
+    --mg-big: 1.2rem;
+    --mg-xxl: 2rem;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size);
+    color: var(--color-black);
+    font-family: "Poppins", sans-serif;
+    background-color: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Outfit", sans-serif;
+}
+
+.font-display {
+    font-family: "Lobster", cursive;
+}
+
+main {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}

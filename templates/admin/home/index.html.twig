@@ -1,0 +1,79 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title 'LookBook - Administration' %}
+
+{% block menu %}
+    {% set active_menu = "home" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="font-display">Bienvenue {{ app.user.username }}</h1>
+    <h3>Accès rapides</h3>
+    <div class="card-container">
+        <a class="card" href="{{ path('app_admin_home_index') }}">
+            <div class="header">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </div>
+            <div class="body">
+                Accueil
+            </div>
+        </a>
+        <a class="card" href="#">
+            <div class="header">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="body">
+                Utilisateurs
+            </div>
+        </a>
+        <a class="card">
+            <div class="header">
+                <i class="fa-solid fa-address-book"></i>
+            </div>
+            <div class="body">
+                Adresses
+            </div>
+        </a>
+        <a class="card" href="#">
+            <div class="header">
+                <i class="fa-solid fa-feather"></i>
+            </div>
+            <div class="body">
+                Auteurs
+            </div>
+        </a>
+        <a class="card">
+            <div class="header">
+                <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div class="body">
+                Maisons d'éditions
+            </div>
+        </a>
+        <a class="card">
+            <div class="header">
+                <i class="fa-solid fa-tags"></i>
+            </div>
+            <div class="body">
+                Catégories
+            </div>
+        </a>
+        <a class="card">
+            <div class="header">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="body">
+                Livres
+            </div>
+        </a>
+        <a class="card">
+            <div class="header">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <div class="body">
+                Commandes
+            </div>
+        </a>
+    </div>
+{% endblock %}

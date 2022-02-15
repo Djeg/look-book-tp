@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/admin.css" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="js/admin.js"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="sidebar">
+        <p class="logo font-display">Look Book</p>
+        <nav class="menu">
+            {% set active_menu = "" %}
+            {% block menu %}
+                <a href="{{ path('app_admin_home_index') }}" class="item {% if active_menu == "home" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="label">
+                        Accueil
+                    </div>
+                </a>
+                <a href="#" class="item {% if active_menu == "users" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="label">
+                        Utilisateurs
+                    </div>
+                </a>
+                <a href="#" class="item {% if active_menu == "addreses" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-address-book"></i>
+                    </div>
+                    <div class="label">
+                        Adresses
+                    </div>
+                </a>
+                <a href="#" class="item {% if active_menu == "authors" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <div class="label">
+                        Auteurs
+                    </div>
+                </a>
+                <a href="#" class="item {% if active_menu == "publishers" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <div class="label">
+                        Maisons d'édition
+                    </div>
+                </a>
+                <a href="#" class="item {% if active_menu == "categories" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <div class="label">
+                        Catégories
+                    </div>
+                </a>
+                <a href="#" class="item {% if active_menu == "books" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div class="label">
+                        Livres
+                    </div>
+                </a>
+                <a href="#" class="item {% if active_menu == "orders" %}active{% endif %}">
+                    <div class="ico">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="label">
+                        Commandes
+                    </div>
+                </a>
+            {% endblock %}
+        </nav> 
+        <nav class="menu bottom">
+            <a href="{{ path('app_front_user_logout') }}" class="item">
+                <div class="ico">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </div>
+                <div class="label">
+                    Déconnexion
+                </div>
+            </a>
+            <a href="{{ path('app_front_home_index') }}" class="item">
+                <div class="ico">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </div>
+                <div class="label">
+                    Retour au site
+                </div>
+            </a>
+        </nav>
+    </div>
+    <div class="content">{% block content '' %}</div>
+{% endblock %}

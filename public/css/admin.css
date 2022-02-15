@@ -93,3 +93,18 @@ main {
     flex-grow: 2;
     justify-content: center;
 }
+
+/* ADMIN TABLE DESIGN */
+.table-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--mg-medium);
+}
+table td,
+table th {
+    text-align: center;
+}
+table tr:nth-child(odd) {
+    background-color: var(--color-soft-grey);
+}

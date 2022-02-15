@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
 {% endblock %}
 
 {% block javascripts %}
-    <script src="js/admin.js"></script>
+    <script src="/js/admin.js"></script>
 {% endblock %}
 
 {% block main %}
@@ -22,7 +22,7 @@
                         Accueil
                     </div>
                 </a>
-                <a href="#" class="item {% if active_menu == "users" %}active{% endif %}">
+                <a href="{{ path('app_admin_user_index') }}" class="item {% if active_menu == "users" %}active{% endif %}">
                     <div class="ico">
                         <i class="fa-solid fa-users"></i>
                     </div>

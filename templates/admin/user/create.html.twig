@@ -1,0 +1,33 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title "Administration - Utilisateurs" %}
+
+{% block menu %}
+    {% set active_menu = "users" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="font-display">
+        {% block pageTitle %}
+            Nouvel Utilisateur
+        {% endblock %}
+    </h1>
+    <div class="table-head">
+        <h3>
+            {% block pageSubTitle %}
+                Ajouter un nouvel utilisateur
+            {% endblock %}
+        </h3>
+        <div>
+            <a href="{{ path('app_admin_user_index') }}" class="btn">
+                <i class="fa-solid fa-angle-left"></i>
+                &nbsp;{% block backLabel 'Retour à la liste' %}
+            </a>
+        </div>
+    </div>
+
+    {{ form(form) }}
+
+{% endblock %}

@@ -9,6 +9,10 @@ Contient l'intégralité des variables css du projet
     --color-cyan: #5c998c;
     --color-beige: #e1e9d8;
     --color-white: #fffceb;
+    --color-soft-grey: #f0eddd;
+    --color-green: #0a5d0a;
+    --color-red: #801f1f;
+    --color-yellow: #796420;
 
     --font-size: 16px;
 
@@ -47,4 +51,36 @@ main {
     margin: 0;
     padding: 0;
     flex-direction: column;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: var(--mg-medium);
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: var(--mg-small);
+    background-color: var(--color-black-coffee);
+    color: var(--color-white);
+    transition: all 0.5s;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+.btn.success {
+    background-color: var(--color-green);
+}
+.btn.error {
+    background-color: var(--color-red);
+}
+.btn.warning {
+    background-color: var(--color-yellow);
+}
+.btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-black-coffee);
+    box-shadow: 0px 0px 2px var(--color-black-coffee-40);
 }

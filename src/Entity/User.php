@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Admin\UpdatableEntity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation\Slug;
@@ -10,7 +11,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface, UpdatableEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -90,6 +91,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
+    }
+
+    public function getRole(): string
+    {
+        return $this->roles[0];
     }
 
     public function setRoles(array $roles): self

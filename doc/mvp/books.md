@@ -54,3 +54,4 @@ Je dois pouvoir rechercher des livres avec les critéres suivants :
 -   Par catégorie
 -   Par prix minimum / maximum
 -   Par maisons d'édition
+-   Trier par prix ou titre

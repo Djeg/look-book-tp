@@ -23,3 +23,10 @@ An tant qu'admin lorsque je me rend sur la page d'accueil de l'admin (`/admin`)
 Et que je clique sur `Gestion des catégories`
 Alors je dois voir l'intégralité des catégories sous forme de liste
 Je peux dès lors ajouter, supprimer et éditer une catégorie
+
+## [FRONT] Consulter un auteur
+
+An tant qu'utilisateur non connécté
+Lorsque je me rend sur la page d'accueil de l'admin (`/auteur/{id}`)
+Alors je dois voir les détails de l'auteur ainsi que les 25 derniers livres
+Attaché à cette auteur

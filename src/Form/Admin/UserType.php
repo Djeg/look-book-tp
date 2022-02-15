@@ -2,7 +2,9 @@
 
 namespace App\Form\Admin;
 
+use App\Entity\Address;
 use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -46,10 +48,24 @@ class UserType extends AbstractType
             ->add('username', TextType::class, [
                 'label' => 'Nom d\'utilisateur :',
             ])
+            ->add('billingAddress', EntityType::class, [
+                'label' => 'Adresse de facturation :',
+                'multiple' => false,
+                'expanded' => false,
+                'class' => Address::class,
+                'required' => false,
+            ])
+            ->add('deliveryAddress', EntityType::class, [
+                'label' => 'Adresse de livraison :',
+                'multiple' => false,
+                'expanded' => false,
+                'class' => Address::class,
+                'required' => false,
+            ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Ajouter',
+                'label' => 'Envoyer',
                 'attr' => [
-                    'class' => 'btn',
+                    'class' => 'btn success',
                 ]
             ])
             ->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($options) {

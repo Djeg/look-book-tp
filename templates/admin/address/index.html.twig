@@ -1,19 +1,19 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title "Administration - Utilisateurs" %}
+{% block title "Administration - Adresses" %}
 
 {% block menu %}
-    {% set active_menu = "users" %}
+    {% set active_menu = "addresses" %}
     {{ parent() }}
 {% endblock %}
 
 {% block content %}
 
-    <h1 class="font-display">Utilisateurs</h1>
+    <h1 class="font-display">Adresses</h1>
     <div class="table-head">
-        <h3>Liste des utilisateurs</h3>
+        <h3>Liste des adresses</h3>
         <div>
-            <a href="{{ path('app_admin_user_create') }}" class="btn">
+            <a href="{{ path('app_admin_address_create') }}" class="btn">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Ajouter
             </a>
@@ -22,10 +22,10 @@
 
     {% set fields = {
         'id': 'Id',
-        'lastname': 'Nom',
-        'firstname': 'Prénom',
-        'email': 'Email',
-        'role': 'Role',
+        'label': 'Libelé',
+        'city': 'Cité',
+        'zipCode': 'Code Postal',
+        'street': 'Rue',
         'actions': 'Actions',
     } %}
 
@@ -35,19 +35,19 @@
             <th>{{  label }}</th>
         {% endfor %}
         </tr>
-        {% for user in data %}
+        {% for address in data %}
             <tr>
                 {% for key, label in fields %}
                     <td>
                         {% if key == "actions" %}
-                            <a href="{{ path('app_admin_user_update', {id: user.id}) }}" class="btn">
+                            <a href="{{ path('app_admin_address_update', {id: address.id}) }}" class="btn">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
-                            <a href="{{ path('app_admin_user_delete', {id: user.id}) }}" class="btn error">
+                            <a href="{{ path('app_admin_address_delete', {id: address.id}) }}" class="btn error">
                                 <i class="fa-solid fa-trash"></i>
                             </a>
                         {% else %}
-                            {{ attribute(user, key) }}
+                            {{ attribute(address, key) }}
                         {% endif %}
                     </td>
                 {% endfor %}

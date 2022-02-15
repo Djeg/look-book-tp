@@ -8,3 +8,23 @@ App\Entity\User:
         username: "Administrateur"
         firstname: "Admin"
         lastname: "Admin"
+    user:
+        email: user@lookbook.com
+        # Password: user
+        password: \$2y\$13\$Lx7BWWrmXhLjvmroviLkv.enz4/vX5TrOV7p.xO39MeI/J0qcK4nG
+        roles: ["ROLE_USER"]
+        username: "Johnny John"
+        firstname: "John"
+        lastname: "Doe"
+        addresses: ["@address_home"]
+        billingAddress: "@address_home"
+        deliveryAddress: "@address_home"
+
+App\Entity\Address:
+    address_home:
+        label: "Maison"
+        street: "18 rue des jardins"
+        zipCode: "31000"
+        city: "Toulouse"
+        supplement: "1er étage, porte de droite"
+        phoneNumber: "06 22 22 22 22"

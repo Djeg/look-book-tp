@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Admin\UpdatableEntity;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation\Slug;
 use Gedmo\Mapping\Annotation\Timestampable;
@@ -47,6 +49,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
     #[Slug(fields: ["username"])]
     #[ORM\Column(type: 'string', length: 255)]
     private $slug;
+
+    #[ORM\ManyToMany(targetEntity: Address::class)]
+    private $addresses;
+
+    #[ORM\ManyToOne(targetEntity: Address::class)]
+    private $billingAddress;
+
+    #[ORM\ManyToOne(targetEntity: Address::class)]
+    private $deliveryAddress;
+
+    public function __construct()
+    {
+        $this->addresses = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -197,6 +213,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Address[]
+     */
+    public function getAddresses(): Collection
+    {
+        return $this->addresses;
+    }
+
+    public function addAddress(Address $address): self
+    {
+        if (!$this->addresses->contains($address)) {
+            $this->addresses[] = $address;
+        }
+
+        return $this;
+    }
+
+    public function removeAddress(Address $address): self
+    {
+        $this->addresses->removeElement($address);
+
+        return $this;
+    }
+
+    public function getBillingAddress(): ?Address
+    {
+        return $this->billingAddress;
+    }
+
+    public function setBillingAddress(?Address $billingAddress): self
+    {
+        $this->billingAddress = $billingAddress;
+
+        return $this;
+    }
+
+    public function getDeliveryAddress(): ?Address
+    {
+        return $this->deliveryAddress;
+    }
+
+    public function setDeliveryAddress(?Address $deliveryAddress): self
+    {
+        $this->deliveryAddress = $deliveryAddress;
 
         return $this;
     }

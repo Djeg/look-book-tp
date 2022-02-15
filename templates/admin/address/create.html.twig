@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title "Administration - Adresses" %}
+
+{% block menu %}
+    {% set active_menu = "addresses" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="font-display">
+        {% block pageTitle %}
+            Nouvelle Adresse
+        {% endblock %}
+    </h1>
+    <div class="table-head">
+        <h3>
+            {% block pageSubTitle %}
+                Ajouter une nouvelle adresse
+            {% endblock %}
+        </h3>
+        <div>
+            <a href="{{ path('app_admin_address_index') }}" class="btn">
+                <i class="fa-solid fa-angle-left"></i>
+                &nbsp;{% block backLabel 'Retour à la liste' %}
+            </a>
+        </div>
+    </div>
+
+    {{ form(form) }}
+
+{% endblock %}

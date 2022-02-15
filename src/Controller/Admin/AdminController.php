@@ -66,6 +66,7 @@ class AdminController extends AbstractController
 
         return $this->render("admin/{$this->getTemplatePath()}/update.html.twig", [
             'form' => $form->createView(),
+            'data' => $form->getData(),
         ]);
     }
 

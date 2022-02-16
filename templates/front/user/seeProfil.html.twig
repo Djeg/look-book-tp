@@ -1,0 +1,24 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}LookBook - Mon Profile{% endblock %}
+
+{% block content %}
+
+<div class="left-menu-layout">
+    <nav class="container menu">
+        <a href="{{ path('app_front_user_profil') }}" class="item active">
+            Son Profile
+        </a>
+        <a href="" class="item">
+            Ses Livres
+        </a>
+        <a href="" class="item">
+            Ses Avis
+        </a>
+    </nav>
+    <div class="container">
+        <h1>Profile de {{ user.username }}</h1>
+    </div>
+</div>
+
+{% endblock %}

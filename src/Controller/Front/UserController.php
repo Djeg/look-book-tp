@@ -2,8 +2,14 @@
 
 namespace App\Controller\Front;
 
+use App\Entity\User;
+use App\Form\Front\UserProfilType;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -31,5 +37,64 @@ class UserController extends AbstractController
     public function logout(): void
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
+
+    #[IsGranted("ROLE_USER")]
+    #[Route("/mon-profile", name: "app_front_user_profil")]
+    public function profil(
+        UserPasswordHasherInterface $encoder,
+        EntityManagerInterface $manager,
+        Request $request,
+    ): Response {
+        $user = $this->getUser();
+        $form = $this->createForm(UserProfilType::class, $user, [
+            'mode' => 'edit',
+            'password_encoder' => $encoder,
+        ]);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($form->getData());
+            $manager->flush();
+        }
+
+        return $this->render('front/user/profil.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route("/inscription", name: "app_front_user_subscription")]
+    public function subscription(
+        UserPasswordHasherInterface $encoder,
+        EntityManagerInterface $manager,
+        Request $request,
+    ): Response {
+        $form = $this->createForm(UserProfilType::class, null, [
+            'mode' => 'create',
+            'password_encoder' => $encoder,
+        ]);
+        $form->handleRequest($request);
+
+        dump($form->getData());
+        dump($form->isSubmitted());
+        if ($form->isSubmitted() && $form->isValid()) {
+            dump($form->getData());
+            $manager->persist($form->getData());
+            $manager->flush();
+
+            return $this->redirectToRoute('app_front_user_login');
+        }
+
+        return $this->render('front/user/subscription.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route("/profile/{slug}", name: "app_front_user_seeProfil")]
+    public function seeProfil(User $user): Response
+    {
+        return $this->render('front/user/seeProfil.html.twig', [
+            'user' => $user,
+        ]);
     }
 }

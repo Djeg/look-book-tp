@@ -1,0 +1,36 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}LookBook - Mon Profile{% endblock %}
+
+{% block content %}
+
+<div class="left-menu-layout">
+    <nav class="container menu">
+        <a href="{{ path('app_front_user_profil') }}" class="item active">
+            Mon Profile
+        </a>
+        <a href="{{ path('app_front_user_seeProfil', {
+            slug: app.user.slug,
+        }) }}" class="item">
+            Mon Profile Public
+        </a>
+        <a href="" class="item">
+            Mes Adreses
+        </a>
+        <a href="" class="item">
+            Mes Livres
+        </a>
+        <a href="" class="item">
+            Mes Commandes
+        </a>
+        <a href="{{ path('app_front_user_logout') }}" class="item">
+            Se déconécter
+        </a>
+    </nav>
+    <div class="container">
+        <h1>Mon Profile</h1>
+        {{ form(form) }}
+    </div>
+</div>
+
+{% endblock %}

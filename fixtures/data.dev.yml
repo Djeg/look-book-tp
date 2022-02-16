@@ -30,3 +30,22 @@ App\Entity\Address:
         city: "Toulouse"
         supplement: "1er étage, porte de droite"
         phoneNumber: "06 22 22 22 22"
+
+App\Entity\Author:
+    author_rowling:
+        name: "J.K. Rowling"
+        image: "https://commons.wikimedia.org/wiki/File:J._K._Rowling_2010.jpg?uselang=fr"
+        description: >
+            Joanne Rowling,
+            plus connue sous les noms de plume J. K. Rowling
+            et Robert Galbraith, est une romancière et scénariste
+            britannique née le 31 juillet 1965 dans l’agglomération
+            de Yate (Gloucestershire du Sud).
+            Elle doit sa notoriété mondiale à la série Harry Potter,
+            dont les romans traduits en près de quatre-vingts
+            langues ont été vendus à plus de 500 millions
+            d'exemplaires dans le monde.
+    author_{1..50}:
+        name: "<word()> <word()>"
+        image: "https://commons.wikimedia.org/wiki/File:J._K._Rowling_2010.jpg?uselang=fr"
+        description: <paragraph()>

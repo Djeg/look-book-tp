@@ -1,0 +1,55 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title "Administration - Auteurs" %}
+
+{% block menu %}
+    {% set active_menu = "authors" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="font-display">Auteurs</h1>
+    <div class="table-head">
+        <h3>Liste des auteurs</h3>
+        <div>
+            <a href="{{ path('app_admin_author_create') }}" class="btn">
+                <i class="fa-solid fa-circle-plus"></i>
+                &nbsp;Ajouter
+            </a>
+        </div>
+    </div>
+
+    {% set fields = {
+        'id': 'Id',
+        'name': 'Nom',
+        'actions': 'Actions',
+    } %}
+
+    <table>
+        <tr>
+        {% for key, label in fields %}
+            <th>{{  label }}</th>
+        {% endfor %}
+        </tr>
+        {% for author in data %}
+            <tr>
+                {% for key, label in fields %}
+                    <td>
+                        {% if key == "actions" %}
+                            <a href="{{ path('app_admin_author_update', {id: author.id}) }}" class="btn">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a href="{{ path('app_admin_author_delete', {id: author.id}) }}" class="btn error">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        {% else %}
+                            {{ attribute(author, key) }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

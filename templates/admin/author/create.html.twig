@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title "Administration - Auteurs" %}
+
+{% block menu %}
+    {% set active_menu = "authors" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="font-display">
+        {% block pageTitle %}
+            Nouvel Auteur
+        {% endblock %}
+    </h1>
+    <div class="table-head">
+        <h3>
+            {% block pageSubTitle %}
+                Ajouter un nouvel auteur
+            {% endblock %}
+        </h3>
+        <div>
+            <a href="{{ path('app_admin_author_index') }}" class="btn">
+                <i class="fa-solid fa-angle-left"></i>
+                &nbsp;{% block backLabel 'Retour à la liste' %}
+            </a>
+        </div>
+    </div>
+
+    {{ form(form) }}
+
+{% endblock %}

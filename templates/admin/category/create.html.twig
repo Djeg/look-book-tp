@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title "Administration - Catégories" %}
+
+{% block menu %}
+    {% set active_menu = "categories" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="font-display">
+        {% block pageTitle %}
+            Nouvelle Catégorie
+        {% endblock %}
+    </h1>
+    <div class="table-head">
+        <h3>
+            {% block pageSubTitle %}
+                Ajouter une nouvelle categorie
+            {% endblock %}
+        </h3>
+        <div>
+            <a href="{{ path('app_admin_category_index') }}" class="btn">
+                <i class="fa-solid fa-angle-left"></i>
+                &nbsp;{% block backLabel 'Retour à la liste' %}
+            </a>
+        </div>
+    </div>
+
+    {{ form(form) }}
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title "Administration - Catégories" %}
+
+{% block menu %}
+    {% set active_menu = "categories" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="font-display">Catégories</h1>
+    <div class="table-head">
+        <h3>Liste des catégories</h3>
+        <div>
+            <a href="{{ path('app_admin_category_create') }}" class="btn">
+                <i class="fa-solid fa-circle-plus"></i>
+                &nbsp;Ajouter
+            </a>
+        </div>
+    </div>
+
+    {% set fields = {
+        'id': 'Id',
+        'name': 'Nom',
+        'actions': 'Actions',
+    } %}
+
+    <table>
+        <tr>
+        {% for key, label in fields %}
+            <th>{{  label }}</th>
+        {% endfor %}
+        </tr>
+        {% for category in data %}
+            <tr>
+                {% for key, label in fields %}
+                    <td>
+                        {% if key == "actions" %}
+                            <a href="{{ path('app_admin_category_update', {id: category.id}) }}" class="btn">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a href="{{ path('app_admin_category_delete', {id: category.id}) }}" class="btn error">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        {% else %}
+                            {{ attribute(category, key) }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

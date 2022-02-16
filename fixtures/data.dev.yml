@@ -95,3 +95,7 @@ App\Entity\Publisher:
             Le groupe fait notamment l'acquisition des éditions
             du Seuil en 2004.
         logo: "https://upload.wikimedia.org/wikipedia/fr/f/f0/Groupe_La_Martini%C3%A8re.gif"
+
+App\Entity\Category:
+    category_{0..20}:
+        name: "<word()> <word()>"

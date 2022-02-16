@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title "Administration - Maisons d'édition" %}
+
+{% block menu %}
+    {% set active_menu = "publishers" %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="font-display">
+        {% block pageTitle %}
+            Nouvelle Maison d'Édition
+        {% endblock %}
+    </h1>
+    <div class="table-head">
+        <h3>
+            {% block pageSubTitle %}
+                Ajouter une nouvelle maison d'édition
+            {% endblock %}
+        </h3>
+        <div>
+            <a href="{{ path('app_admin_publisher_index') }}" class="btn">
+                <i class="fa-solid fa-angle-left"></i>
+                &nbsp;{% block backLabel 'Retour à la liste' %}
+            </a>
+        </div>
+    </div>
+
+    {{ form(form) }}
+
+{% endblock %}

@@ -49,3 +49,49 @@ App\Entity\Author:
         name: "<word()> <word()>"
         image: "https://commons.wikimedia.org/wiki/File:J._K._Rowling_2010.jpg?uselang=fr"
         description: <paragraph()>
+
+App\Entity\Publisher:
+    publisher_0:
+        name: "Gallimard"
+        description: >
+            Les éditions Gallimard, appelées jusqu’en 1919
+            les éditions de la Nouvelle Revue française et
+            jusqu’en 1961 la librairie Gallimard,
+            sont un groupe d'édition français.
+            La maison d'édition est fondée par Gaston Gallimard
+            en 1911. Le groupe Gallimard est actuellement
+            dirigé par Antoine Gallimard.
+        logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/e/e6/Gallimard_logo.svg/1024px-Gallimard_logo.svg.png"
+    publisher_1:
+        name: "Hachette"
+        description: >
+            Hachette Livre est un groupe d'édition français.
+            Créé en 1826 par Louis Hachette,
+            il fait partie de Lagardère SCA depuis 1981.
+            Au fil de ses acquisitions, il est devenu
+            le premier éditeur en France et le deuxième
+            en Espagne. Il fait partie des dix principaux
+            conglomérats d'édition avec 2,4 milliards d'euros
+            de chiffre d'affaires annuel en 2020.
+        logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f7/Logo_Hachette_Livre_Actuel.svg/1024px-Logo_Hachette_Livre_Actuel.svg.png"
+    publisher_2:
+        name: "Editis"
+        description: >
+            Editis est la holding1 d'un groupe d'édition
+            français constitué en 2004,
+            racheté en 20182 par Vivendi.
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Editis-logo-vector.svg/1024px-Editis-logo-vector.svg.png"
+    publisher_3:
+        name: "La Martinière Groupe"
+        description: >
+            La Martinière est un groupe d'édition français
+            créé en 1992 sous le nom de Groupe Latingy par
+            Hervé de La Martinière. Avec 260 millions d'euros
+            de chiffre d'affaires annuel,
+            il compte parmi les vingt plus importants
+            groupes d'édition français.
+            Présent en France, en Allemagne et aux États-Unis,
+            il s'est développé par acquisitions successives.
+            Le groupe fait notamment l'acquisition des éditions
+            du Seuil en 2004.
+        logo: "https://upload.wikimedia.org/wikipedia/fr/f/f0/Groupe_La_Martini%C3%A8re.gif"

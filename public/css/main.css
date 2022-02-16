@@ -45,14 +45,6 @@ h6 {
     font-family: "Lobster", cursive;
 }
 
-main {
-    display: flex;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-}
-
 /* BUTTONS */
 .btn {
     display: inline-block;

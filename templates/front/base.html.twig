@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/front.css" />
+{% endblock %}
+
+{% block body %}
+    <header class="header">
+        <div class="container left">
+            <a href="{{ path('app_front_home_index') }}" class="font-display logo">
+                Look Book
+            </p>
+            <a href="{{ path('app_front_home_index')}}" class="item">
+                Nouveautés
+            </a>
+            <a href="{{ path('app_front_home_index')}}" class="item">
+                Bons Plans
+            </a>
+            <a href="{{ path('app_front_home_index')}}" class="item">
+                Nos Favories
+            </a>
+            <a href="{{ path('app_front_home_index')}}" class="item">
+                Les Prestigieux
+            </a>
+        </div>
+        <div class="container right">
+            <a href="" class="item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <a href="" class="item">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+            <a href="" class="item">
+                <i class="fa-solid fa-basket-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+
+    <main class="content">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <nav class="quick-nav">
+            <div class="container logo">
+                <p class="logo font-display">Look Book</p>
+                <div class="social">
+                    <a href="" class="item">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="" class="item">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="" class="item">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="container">
+                <nav class="menu">
+                    <h4>À props de nous</h4>
+                    <div class="text-menu">
+                        <a href="" class="item">À propos</a>
+                        <a href="" class="item">Nous contacter</a>
+                        <a href="" class="item">Offres d'emploies</a>
+                        <a href="" class="item">Mentions légales</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="container">
+                <nav class="menu">
+                    <h4>Plan du site</h4>
+                    <div class="text-menu">
+                        <a href="" class="item">À propos</a>
+                        <a href="" class="item">Nous contacter</a>
+                        <a href="" class="item">Offres d'emploies</a>
+                        <a href="" class="item">Mentions légales</a>
+                        <a href="" class="item">Explorer</a>
+                        <a href="" class="item">S'inscrire</a>
+                        <a href="" class="item">Se connecter</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="container">
+                <nav class="menu">
+                    <h4>Souscrire à notre newsletter !</h4>
+                    <form class="form-inline">
+                        <input type="text" placeholder="Votre adresse email ..." />
+                        <button type="submit" class="btn btn-warning">S'inscrire</button>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+        <p class="copyright">
+            <span class="font-display">Look Book</span> © | contact@lookbook.com | +33 4 02 31 24 51
+        </p>
+    </footer>
+{% endblock %}

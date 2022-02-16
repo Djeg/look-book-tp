@@ -8,6 +8,7 @@ App\Entity\User:
         username: "Administrateur"
         firstname: "Admin"
         lastname: "Admin"
+        profilePicture: "https://media.istockphoto.com/photos/headshot-portrait-of-smiling-ethnic-businessman-in-office-picture-id1300512215"
     user:
         email: user@lookbook.com
         # Password: user
@@ -19,6 +20,7 @@ App\Entity\User:
         addresses: ["@address_home"]
         billingAddress: "@address_home"
         deliveryAddress: "@address_home"
+        profilePicture: "https://media.istockphoto.com/photos/couple-having-a-great-and-lovely-time-in-the-mountains-picture-id1206216589"
 
 App\Entity\Address:
     address_home:

@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* HEADER */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: var(--color-black-coffee);
+}
+.header .container {
+    display: flex;
+    align-items: stretch;
+}
+.header .container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--mg-medium);
+    text-decoration: none;
+    outline: none;
+    color: var(--color-white);
+    border-top: 0px solid var(--color-black-coffee);
+    transition: all 0.5s;
+}
+.header .container a:hover {
+    border-top: 5px solid var(--color-black-coffee);
+    background-color: var(--color-white);
+    color: var(--color-black-coffee);
+}
+.header .container .logo {
+    font-size: 1.7rem;
+    border-top: 5px solid var(--color-black-coffee);
+    background-color: var(--color-white);
+    color: var(--color-black-coffee);
+}
+.header .container.center {
+    flex-grow: 2;
+    justify-content: center;
+}
+.header .container a.item i {
+    font-size: 1.3rem;
+}
+
+/* CONTENT */
+main.content {
+    flex-grow: 2;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: var(--mg-medium) var(--mg-big);
+    background-color: var(--color-black-coffee);
+    color: var(--color-white);
+}
+footer .copyright {
+    text-align: center;
+}
+footer .copyright .font-display {
+    font-size: 1.6rem;
+}
+footer .quick-nav {
+    display: flex;
+    justify-content: space-between;
+}
+footer .quick-nav .container {
+    display: flex;
+    flex-direction: column;
+}
+footer .quick-nav .container:not(.logo) {
+    margin: 0px var(--mg-big);
+}
+footer .quick-nav .container .menu {
+    display: flex;
+    flex-direction: column;
+}
+footer .quick-nav .container .menu .text-menu {
+    display: flex;
+    flex-direction: column;
+}
+footer .quick-nav .container .menu .text-menu .item {
+    display: block;
+    color: var(--color-white);
+    text-decoration: none;
+    outline: none;
+    padding: var(--mg-small) 0px;
+}
+footer .quick-nav .container.logo {
+    flex-grow: 2;
+    align-self: center;
+    justify-content: center;
+}
+footer .quick-nav .container.logo .logo {
+    font-size: 2rem;
+    text-align: center;
+}
+footer .quick-nav .container.logo .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .quick-nav .container.logo .social .item {
+    display: block;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    text-decoration: none;
+    outline: none;
+    padding: var(--mg-small);
+}

@@ -59,6 +59,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
     #[ORM\ManyToOne(targetEntity: Address::class)]
     private $deliveryAddress;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $profilePicture;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
@@ -261,6 +264,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
     public function setDeliveryAddress(?Address $deliveryAddress): self
     {
         $this->deliveryAddress = $deliveryAddress;
+
+        return $this;
+    }
+
+    public function getProfilePicture(): ?string
+    {
+        return $this->profilePicture;
+    }
+
+    public function setProfilePicture(?string $profilePicture): self
+    {
+        $this->profilePicture = $profilePicture;
 
         return $this;
     }

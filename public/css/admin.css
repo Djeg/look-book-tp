@@ -1,5 +1,37 @@
 main {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     flex-direction: row;
+}
+
+/* ADMIN PICTURE */
+.admin-picture {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px var(--color-black-coffee-40);
+}
+.admin-picture .picture {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+.admin-picture .picture img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
 
 /* ADMIN SIDEBAR */

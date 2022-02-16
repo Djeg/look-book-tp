@@ -9,6 +9,11 @@
 {% endblock %}
 
 {% block main %}
+    <nav class="admin-picture">
+        <a href="#" class="picture">
+            <img src="{{ app.user.profilePicture }}" alt="{{ app.user.email }}" />
+        </a>
+    </nav>
     <div class="sidebar">
         <p class="logo font-display">Look Book</p>
         <nav class="menu">

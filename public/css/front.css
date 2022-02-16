@@ -171,3 +171,25 @@ footer .quick-nav .container.logo .social .item {
 .left-menu-layout .menu .item.active {
     border-left: 5px solid var(--color-black-coffee-40);
 }
+.left-menu-layout .menu .avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+.left-menu-layout .menu .avatar p {
+    text-align: center;
+    font-size: 1.3rem;
+}
+.left-menu-layout .menu .avatar .picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.left-menu-layout .menu .avatar .picture img {
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
+}

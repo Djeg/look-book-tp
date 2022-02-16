@@ -34,7 +34,7 @@ App\Entity\Address:
 App\Entity\Author:
     author_rowling:
         name: "J.K. Rowling"
-        image: "https://commons.wikimedia.org/wiki/File:J._K._Rowling_2010.jpg?uselang=fr"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/486px-J._K._Rowling_2010.jpg?20150107205956"
         description: >
             Joanne Rowling,
             plus connue sous les noms de plume J. K. Rowling
@@ -47,7 +47,7 @@ App\Entity\Author:
             d'exemplaires dans le monde.
     author_{1..50}:
         name: "<word()> <word()>"
-        image: "https://commons.wikimedia.org/wiki/File:J._K._Rowling_2010.jpg?uselang=fr"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/486px-J._K._Rowling_2010.jpg?20150107205956"
         description: <paragraph()>
 
 App\Entity\Publisher:

@@ -1,0 +1,28 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}LookBook - {{ author.name }}{% endblock %}
+
+{% block content %}
+
+<div class="left-menu-layout">
+    <nav class="container menu">
+        <div class="avatar">
+            <div class="picture">
+                <img src="{{ author.image }}" alt="{{ author.name }}" />
+            </div>
+            <p class="font-display">{{ author.name }}</p>
+        </div>
+        <a href="{{ path('app_front_user_profil') }}" class="item active">
+            Présentation
+        </a>
+        <a href="{{ path('app_front_user_profil') }}" class="item">
+            Ses Livres
+        </a>
+    </nav>
+    <div class="container">
+        <h1>Sa Biographie</h1>
+        <p>{{ author.description }}</p>
+    </div>
+</div>
+
+{% endblock %}

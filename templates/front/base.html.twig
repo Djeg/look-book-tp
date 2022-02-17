@@ -33,6 +33,11 @@
             <a href="" class="item">
                 <i class="fa-solid fa-basket-shopping"></i>
             </a>
+            {% if is_granted("ROLE_ADMIN") %}
+            <a href="{{ path('app_admin_home_index') }}" class="item">
+                <i class="fa-solid fa-bug"></i>
+            </a>
+            {% endif %}
         </div>
     </header>
 

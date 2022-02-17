@@ -21,6 +21,18 @@ App\Entity\User:
         billingAddress: "@address_home"
         deliveryAddress: "@address_home"
         profilePicture: "https://media.istockphoto.com/photos/couple-having-a-great-and-lovely-time-in-the-mountains-picture-id1206216589"
+    user_{1..40}:
+        email: "<email()>"
+        # Password: user
+        password: \$2y\$13\$Lx7BWWrmXhLjvmroviLkv.enz4/vX5TrOV7p.xO39MeI/J0qcK4nG
+        roles: ["ROLE_USER"]
+        username: "<fr_FR:userName()>"
+        firstname: "<fr_FR:firstName()>"
+        lastname: "<fr_FR:lastName()>"
+        addresses: ["@address_*"]
+        billingAddress: "@address_*"
+        deliveryAddress: "@address_*"
+        profilePicture: "https://media.istockphoto.com/photos/couple-having-a-great-and-lovely-time-in-the-mountains-picture-id1206216589"
 
 App\Entity\Address:
     address_home:
@@ -30,6 +42,12 @@ App\Entity\Address:
         city: "Toulouse"
         supplement: "1er étage, porte de droite"
         phoneNumber: "06 22 22 22 22"
+    address_{1..25}:
+        label: "<fr_FR:city()>"
+        street: "<fr_FR:streetAddress()>"
+        zipCode: "<fr_FR:postcode()>"
+        city: "<fr_FR:city()>"
+        phoneNumber: "<fr_FR:phoneNumber()>"
 
 App\Entity\Author:
     author_rowling:
@@ -46,7 +64,7 @@ App\Entity\Author:
             langues ont été vendus à plus de 500 millions
             d'exemplaires dans le monde.
     author_{1..50}:
-        name: "<word()> <word()>"
+        name: "<fr_FR:name()>"
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/486px-J._K._Rowling_2010.jpg?20150107205956"
         description: <paragraph()>
 
@@ -95,7 +113,33 @@ App\Entity\Publisher:
             Le groupe fait notamment l'acquisition des éditions
             du Seuil en 2004.
         logo: "https://upload.wikimedia.org/wikipedia/fr/f/f0/Groupe_La_Martini%C3%A8re.gif"
+    publisher_4:
+        name: "Folio Junior"
+        description: >
+            Folio Junior est une collection française de
+            littérature d'enfance et de jeunesse des éditions Gallimard,
+            créée en 1977.
+        logo: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.cUs0t4hNTKP131af9bAmggHaFm%26pid%3DApi&f=1"
 
 App\Entity\Category:
     category_{0..20}:
         name: "<word()> <word()>"
+
+App\Entity\Book:
+    book_harry_potter:
+        title: "Harry Potter - À l'école des sorciers"
+        description: >
+            Harry Potter tome 1 en français. Très bon état.
+        image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.fnac-static.com%2Fmultimedia%2FImages%2FFR%2FNR%2Fba%2Fd8%2F1d%2F1956026%2F1507-1%2Ftsp20150929154129%2FHarry-Potter-a-l-ecole-des-sorciers.jpg&f=1&nofb=1"
+        price: 8.25
+        publisher: "@publisher_4"
+        authors: ["@author_rowling"]
+        reseller: "@user"
+    book_{1..30}:
+        title: "<fr_FR:catchPhrase()>"
+        description: "<fr_FR:realText()>"
+        image: "<imageUrl(600, 350, 'Livre', true, 'à vendre', true)>"
+        price: "<randomFloat(2, 8, 40)>"
+        publisher: "@publisher_*"
+        authors: ["@author_*"]
+        reseller: "@user_*"

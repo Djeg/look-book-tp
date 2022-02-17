@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Admin\UpdatableEntity;
 use App\Repository\AuthorRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AuthorRepository::class)]
@@ -22,6 +24,14 @@ class Author implements UpdatableEntity
 
     #[ORM\Column(type: 'text', nullable: true)]
     private $description;
+
+    #[ORM\ManyToMany(targetEntity: Book::class, mappedBy: 'authors')]
+    private $books;
+
+    public function __construct()
+    {
+        $this->books = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -60,6 +70,33 @@ class Author implements UpdatableEntity
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->addAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            $book->removeAuthor($this);
+        }
 
         return $this;
     }

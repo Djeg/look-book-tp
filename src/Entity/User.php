@@ -62,9 +62,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $profilePicture;
 
+    #[ORM\OneToMany(mappedBy: 'reseller', targetEntity: Book::class, orphanRemoval: true)]
+    private $books;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -276,6 +280,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
     public function setProfilePicture(?string $profilePicture): self
     {
         $this->profilePicture = $profilePicture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setReseller($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->removeElement($book)) {
+            // set the owning side to null (unless already changed)
+            if ($book->getReseller() === $this) {
+                $book->setReseller(null);
+            }
+        }
 
         return $this;
     }

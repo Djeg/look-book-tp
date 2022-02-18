@@ -6,6 +6,12 @@
 
 <div class="left-menu-layout">
     <nav class="container menu">
+        <div class="avatar">
+            <div class="picture">
+                <img src="{{ user.profilePicture }}" alt="{{ user.username }}" />
+            </div>
+            <p class="font-display">{{ user.username }}</p>
+        </div>
         <a href="{{ path('app_front_user_profil') }}" class="item active">
             Son Profile
         </a>

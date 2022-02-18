@@ -1,0 +1,51 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}LookBook - {{ book.title }}{% endblock %}
+
+{% block content %}
+
+<div class="left-menu-layout">
+    <nav class="container menu">
+        <div class="avatar">
+            <p class="font-display">
+                Par {{ book.authors|map(a => a.name)|join(', ') }}
+            </p>
+            {% for author in book.authors %}
+                <a class="picture" href="{{ path('app_front_author_show', {id: author.id}) }}">
+                    <img src="{{ author.image }}" alt="{{ author.name }}" />
+                </a>
+            {% endfor %}
+        </div>
+        <div class="avatar">
+            <p class="font-display">
+                Vendu par {{ book.reseller.username }}
+            </p>
+            <a class="picture" href="{{ path('app_front_user_seeProfil', {slug: book.reseller.slug}) }}">
+                <img src="{{ book.reseller.profilePicture }}" alt="{{ book.reseller.username }}" />
+            </a>
+        </div>
+        <div class="avatar">
+            <p>
+                <a href="" class="item btn success">
+                    {{ book.price }} €
+                    &nbsp;
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                </a>
+            </p>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>{{ book.title }}</h1>
+        <p>
+            <a href="" class="item btn success">
+                {{ book.price }} €
+                &nbsp;
+                <i class="fa-solid fa-cart-arrow-down"></i>
+            </a>
+        </p>
+        <h2>Description :</h2>
+        <p>{{ book.description }}</p>
+    </div>
+</div>
+
+{% endblock %}

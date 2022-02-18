@@ -1,0 +1,33 @@
+{% set active_menu = menu|default('profil') %}
+
+<nav class="container menu">
+    <div class="avatar">
+        <div class="picture">
+            <img src="{{ app.user.profilePicture }}" alt="{{ app.user.username }}" />
+        </div>
+        <p class="font-display">{{ app.user.username }}</p>
+    </div>
+    <a href="{{ path('app_front_user_profil') }}" class="item {% if active_menu == "profil" %}active{% endif %}">
+        Mon Profile
+    </a>
+    <a href="{{ path('app_front_user_sellBook') }}" class="item {% if active_menu == "sell_book" %}active{% endif %}">
+        Vendre un livre
+    </a>
+    <a href="{{ path('app_front_user_seeProfil', {
+        slug: app.user.slug,
+    }) }}" class="item {% if active_menu == "public_profil" %}active{% endif %}">
+        Mon Profile Public
+    </a>
+    <a href="" class="item {% if active_menu == "addresses" %}active{% endif %}">
+        Mes Adreses
+    </a>
+    <a href="" class="item {% if active_menu == "books" %}active{% endif %}">
+        Mes Livres
+    </a>
+    <a href="" class="item {% if active_menu == "orders" %}active{% endif %}">
+        Mes Commandes
+    </a>
+    <a href="{{ path('app_front_user_logout') }}" class="item">
+        Se déconécter
+    </a>
+</nav>

@@ -9,6 +9,25 @@ parameters:
         - https://media.gettyimages.com/photos/serious-man-picture-id468593002?k=20&m=468593002&s=612x612&w=0&h=70aYQaRHWN65xfACWFN1gPyg4UE6y0X5CANrkRwub60=
         - https://media.gettyimages.com/photos/man-carrying-metal-briefcase-picture-id80116152?k=20&m=80116152&s=612x612&w=0&h=AnCDTsz7flmoSaKaUwIfS_v3FIaJtbofrdpvi0_fnJM=
         - https://media.gettyimages.com/photos/boys-face-in-front-of-christmas-tree-picture-id72005272?k=20&m=72005272&s=612x612&w=0&h=xbFXxfAM4Zm7cj0jBN4dQJ3xkLdYuR738FRX3f_t9ns=
+    book_pictures:
+        - https://media.gettyimages.com/photos/isolated-shot-of-white-blank-book-on-white-background-picture-id118103146?k=20&m=118103146&s=612x612&w=0&h=G7sC522WCD_BK0LxNk_4nHefml2H8ixIEOLkoYZbZf4=
+        - https://media.gettyimages.com/photos/antique-leather-book-cover-picture-id183382838?k=20&m=183382838&s=612x612&w=0&h=Gi0iBncD4fv59TlsXbOOANtDyczqNEvWdZYW0DvWbXU=
+        - https://media.gettyimages.com/vectors/modern-abstract-geometric-cover-templates-vector-id1084838856?k=20&m=1084838856&s=612x612&w=0&h=ioKwV4pntZm8cXUelNIZb2QRqvS5JXtWctyw0PP5teI=
+        - https://media.gettyimages.com/vectors/notebook-cover-vector-id656037464?k=20&m=656037464&s=612x612&w=0&h=zEFPMHubx9VWlSUTw4kI_0GCXm6OevbGpe8MoJQEoJc=
+        - https://media.gettyimages.com/vectors/minimalist-cover-design-vector-id1192306649?k=20&m=1192306649&s=612x612&w=0&h=vL4PMgxUrm2Yw421XmwrUKX18FP1BFn_xNQZOyBuv4E=
+        - https://media.gettyimages.com/photos/open-book-picture-id97611308?k=20&m=97611308&s=612x612&w=0&h=gBNj-2QiSHFOwyf65bJdDO5q3DAWemhlE39rFabsCoQ=
+        - https://media.gettyimages.com/photos/hands-holding-open-book-picture-id885172878?k=20&m=885172878&s=612x612&w=0&h=aBCQl-bxsFXFJNkJXPLBPHc-77r2ijSwjMAvRjQrYGA=
+        - https://media.gettyimages.com/photos/book-open-with-pages-flipping-open-picture-id173562091?k=20&m=173562091&s=612x612&w=0&h=I5RvlJxD0L1d0rFa5LUjaACOAVU0NeTgGh3xT-oUKCs=
+        - https://media.gettyimages.com/photos/the-adventure-of-a-sea-captain-and-his-obsession-with-the-sperm-whale-picture-id90017661?k=20&m=90017661&s=612x612&w=0&h=I2Fq4KMbM9WaLg76ystDhb920-QujHxaELFI-vbdkOw=
+        - https://media.gettyimages.com/photos/moby-dick-picture-id90017344?k=20&m=90017344&s=612x612&w=0&h=ZHfA0WUjyjHJtdawuZz2PSgFY1Z5K75s5No7lFYvdwU=
+        - https://media.gettyimages.com/photos/the-jungle-book-by-rudyard-kipling-published-1959-rk-english-author-picture-id171092493?k=20&m=171092493&s=612x612&w=0&h=PosL7ziinydT4w2FrwTszKS8Bgl2sC-Z43CQ_1_YAVQ=
+        - https://media.gettyimages.com/photos/shearer-family-illustrated-bible-with-leather-hardcover-binding-and-picture-id1326279836?k=20&m=1326279836&s=612x612&w=0&h=6CH731UwLhox2FKlUZppJec6oFeRsR_DAng584TiI8s=
+        - https://media.gettyimages.com/photos/cover-of-cookbook-the-way-to-cook-by-julia-child-picture-id72366217?k=20&m=72366217&s=612x612&w=0&h=IKhFBpdVhyu0_BY2OndIThLiM0vJGJ8Ulsdl0g-7Zco=
+        - https://media.gettyimages.com/photos/music-cover-to-george-m-cohans-world-war-i-song-over-there-published-picture-id515296502?k=20&m=515296502&s=612x612&w=0&h=BBtSWBuwa5Z7Rh3C1cv-RJpEHEloZKeR5W-DwnsXZRY=
+        - https://media.gettyimages.com/photos/adventures-of-sherlock-holmes-picture-id90017698?k=20&m=90017698&s=612x612&w=0&h=Xb_4q9MZQ9lyUXNQIz739sQCupxd65CEuFvPd9YbFgQ=
+        - https://media.gettyimages.com/illustrations/vintage-illustration-of-nature-magazine-cover-birds-1930s-illustration-id583863984?k=20&m=583863984&s=612x612&w=0&h=FzhskclaMxKIUedZJYoJPdnuxbu4NE3mCicKXY2bE7c=
+        - https://media.gettyimages.com/photos/an-undersea-adventure-with-fantastic-ships-that-sail-under-the-water-picture-id90017730?k=20&m=90017730&s=612x612&w=0&h=6DMOoFFCgyc0JzSJi_j9tuHgC__88IiO5UTTpz3s2wY=
+        - https://media.gettyimages.com/photos/the-cover-of-the-book-writen-by-mark-twain-aka-samuel-clemens-a-great-picture-id90017720?k=20&m=90017720&s=612x612&w=0&h=iSR1L-i2_80wPN122ocbxtw_cONJm2XdLdmGqChbZy0=
 
 # Contient les fixtures de developement
 App\Entity\User:
@@ -150,7 +169,7 @@ App\Entity\Book:
     book_{1..30}:
         title: "<fr_FR:catchPhrase()>"
         description: "<fr_FR:realText()>"
-        image: "<imageUrl(600, 350, 'Livre', true, 'à vendre', true)>"
+        image: "<randomElement($book_pictures)>"
         price: "<randomFloat(2, 8, 40)>"
         publisher: "@publisher_*"
         authors: ["@author_*"]

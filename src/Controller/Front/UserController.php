@@ -75,8 +75,6 @@ class UserController extends AbstractController
         ]);
         $form->handleRequest($request);
 
-        dump($form->getData());
-        dump($form->isSubmitted());
         if ($form->isSubmitted() && $form->isValid()) {
             dump($form->getData());
             $manager->persist($form->getData());
@@ -100,6 +98,14 @@ class UserController extends AbstractController
     public function seeProfil(User $user): Response
     {
         return $this->render('front/user/seeProfil.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    #[Route("/profile/{slug}/ses-livres", name: "app_front_user_seeBooks")]
+    public function seeBooks(User $user): Response
+    {
+        return $this->render('front/user/seeBooks.html.twig', [
             'user' => $user,
         ]);
     }

@@ -1,3 +1,15 @@
+parameters:
+    profile_pictures:
+        - https://media.gettyimages.com/photos/cloud-blocks-forming-face-in-sky-picture-id543194875?k=20&m=543194875&s=612x612&w=0&h=ORtPh13zmsxcbQCpRcfQJcOufPXpL6_vME4iD_YHc-I=
+        - https://media.gettyimages.com/illustrations/mask-hidden-feelings-illustration-id93072703?k=20&m=93072703&s=612x612&w=0&h=VFVwSuytJisWfAzA6NGY8c0piDeKWZPwU-PqkdnQFg8=
+        - https://media.gettyimages.com/photos/imitation-david-bust-picture-id123925756?k=20&m=123925756&s=612x612&w=0&h=pH-7O7uTVJCebPprUhUqwx-USNLbjDWS6isvupB9XOw=
+        - https://media.gettyimages.com/photos/rock-star-picture-id470214583?k=20&m=470214583&s=612x612&w=0&h=So3DAD48Od3GikVHlrT3Ib7qwHwPBfosBAlji45hEsk=
+        - https://media.gettyimages.com/photos/little-girl-about-to-kiss-a-frog-picture-id78232780?k=20&m=78232780&s=612x612&w=0&h=83yJdqIPv8V0F3rWEu7BYoJKsWkfctxDtBTovN6PxBM=
+        - https://media.gettyimages.com/photos/bengal-kitten-looking-at-toy-fish-closeup-picture-id200255626-003?k=20&m=200255626-003&s=612x612&w=0&h=c55B2TVP577_xq2LpY3PNlt6hJyZu3Bn8HDLQEophuk=
+        - https://media.gettyimages.com/photos/serious-man-picture-id468593002?k=20&m=468593002&s=612x612&w=0&h=70aYQaRHWN65xfACWFN1gPyg4UE6y0X5CANrkRwub60=
+        - https://media.gettyimages.com/photos/man-carrying-metal-briefcase-picture-id80116152?k=20&m=80116152&s=612x612&w=0&h=AnCDTsz7flmoSaKaUwIfS_v3FIaJtbofrdpvi0_fnJM=
+        - https://media.gettyimages.com/photos/boys-face-in-front-of-christmas-tree-picture-id72005272?k=20&m=72005272&s=612x612&w=0&h=xbFXxfAM4Zm7cj0jBN4dQJ3xkLdYuR738FRX3f_t9ns=
+
 # Contient les fixtures de developement
 App\Entity\User:
     admin:
@@ -32,7 +44,7 @@ App\Entity\User:
         addresses: ["@address_*"]
         billingAddress: "@address_*"
         deliveryAddress: "@address_*"
-        profilePicture: "https://media.istockphoto.com/photos/couple-having-a-great-and-lovely-time-in-the-mountains-picture-id1206216589"
+        profilePicture: "<randomElement($profile_pictures)>"
 
 App\Entity\Address:
     address_home:

@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    {% if book.reseller.id == app.user.id %}
+    {% if is_granted('ROLE_USER') and book.reseller.id == app.user.id %}
         <div class="overlay">
             <div>
                 <a href="{{ path('app_front_book_update', {slug: book.slug}) }}" class="btn warning"  onClick="(e => e.stopPropagation())(this)">

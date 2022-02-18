@@ -1,0 +1,18 @@
+{% set active_menu = menu|default('profil') %}
+<nav class="container menu">
+    <div class="avatar">
+        <div class="picture">
+            <img src="{{ user.profilePicture }}" alt="{{ user.username }}" />
+        </div>
+        <p class="font-display">{{ user.username }}</p>
+    </div>
+    <a href="{{ path('app_front_user_seeProfil', {slug: user.slug}) }}" class="item {% if active_menu == 'profil' %}active{% endif %}">
+        Son Profile
+    </a>
+    <a href="{{ path('app_front_user_seeBooks', {slug: user.slug}) }}" class="item {% if active_menu == 'books' %}active{% endif %}">
+        Ses Livres
+    </a>
+    <a href="" class="item {% if active_menu == 'opinion' %}active{% endif %}">
+        Ses Avis
+    </a>
+</nav>

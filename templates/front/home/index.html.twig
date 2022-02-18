@@ -2,6 +2,15 @@
 
 {% block title "LookBook - Accueil" %}
 
+{% block content_class 'start' %}
+
 {% block content %}
-    <h1>Accueil</h1>
+    <h1>Nos Derniers Livres</h1>
+    <div class="book-container">
+        {% for book in books %}
+            {% include 'front/user/_bookThumb.html.twig' with {
+                'book': book,
+            } %}
+        {% endfor %}
+    </div>
 {% endblock %}

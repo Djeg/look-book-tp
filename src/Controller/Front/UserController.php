@@ -90,6 +90,12 @@ class UserController extends AbstractController
         ]);
     }
 
+    #[Route("/mes-livres", name: "app_front_user_myBooks")]
+    public function myBooks(): Response
+    {
+        return $this->render('front/user/myBooks.html.twig');
+    }
+
     #[Route("/profile/{slug}", name: "app_front_user_seeProfil")]
     public function seeProfil(User $user): Response
     {

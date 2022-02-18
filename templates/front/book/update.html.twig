@@ -1,0 +1,17 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}LookBook - Modifier {{ book.title }}{% endblock %}
+
+{% block content %}
+
+<div class="left-menu-layout">
+    {% include 'front/user/_profilMenu.html.twig' with {
+        menu: 'books',
+    } %}
+    <div class="container">
+        <h1>Modifier {{ book.title }}</h1>
+        {{ form(form) }}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<div class="thumbnail" onClick="((e) => window.location.href = '{{ path('app_front_book_show', {slug: book.slug}) }}')(this)">
+    <div class="img" >
+        <img src="{{ book.image }}" alt="{{ book.title }}" />
+    </div>
+    <div class="head">
+        <div class="font-display">{{ book.title }}</div>
+    </div>
+    <div class="footer">
+        <a class="container" title="{{ book.reseller.username }}" href="" onClick="e => e.stopPropagation()">
+            <p>Vendu par</p>
+            <div class="avatar">
+                <img src="{{ book.reseller.profilePicture }}" alt="{{ book.reseller.username }}" />
+            </div>
+        </a>
+        <div class="container">
+            <div class="boutons">
+                <a href="" class="btn success"  onClick="(e => e.stopPropagation())(this)">
+                    {{ book.price }} €&nbsp;
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% if book.reseller.id == app.user.id %}
+        <div class="overlay">
+            <div>
+                <a href="{{ path('app_front_book_update', {slug: book.slug}) }}" class="btn warning"  onClick="(e => e.stopPropagation())(this)">
+                    Modifer&nbsp;
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+            </div>
+            <div>
+                <a href="{{ path('app_front_book_delete', {slug: book.slug}) }}" class="btn error"  onClick="(e => e.stopPropagation())(this)">
+                    Supprimer&nbsp;
+                    <i class="fa-solid fa-trash"></i>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+</div>

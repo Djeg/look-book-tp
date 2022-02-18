@@ -1,0 +1,25 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}LookBook - Mes Livres{% endblock %}
+
+{% block content %}
+    <div class="left-menu-layout">
+        {% include 'front/user/_profilMenu.html.twig' with {
+            menu: 'books',
+        } %}
+        <div class="container">
+            <h1>Mes Livres</h1>
+            {% if app.user.books|length == 0 %}
+                <p>Vous n'avez aucun livres à vendre :)</p>
+            {% else %}
+                <div class="book-container">
+                    {% for book in app.user.books %}
+                        {% include 'front/user/_bookThumb.html.twig' with {
+                            'book': book,
+                        } %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

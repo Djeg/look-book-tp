@@ -223,3 +223,119 @@ footer .quick-nav .container.logo .social .item {
     width: 120px;
     height: 120px;
 }
+
+/* BOOK THUMBNAIL */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.book-container .thumbnail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 480px;
+    width: 320px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 var(--mg-small);
+    border-radius: 10px;
+}
+.book-container .thumbnail .img {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    filter: blur(4px);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+.book-container .thumbnail:hover .img {
+    filter: blur(0px);
+}
+.book-container .thumbnail .img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 0.5s;
+    transform: scale(1);
+}
+.book-container .thumbnail:hover .img img {
+    transform: scale(1.2);
+}
+.book-container .head,
+.book-container .footer {
+    z-index: 2;
+}
+.book-container .head {
+    background-color: var(--color-black-coffee-40);
+    color: var(--color-white);
+}
+.book-container .head > div {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: var(--mg-medium);
+    text-align: center;
+}
+.book-container .footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-black-coffee-40);
+    color: var(--color-white);
+}
+.book-container .footer .container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    color: var(--color-white);
+}
+.book-container .footer .container p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: var(--mg-small) 0;
+}
+.book-container .footer .container .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.book-container .footer .container .avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.book-container .footer .container .boutons a {
+    margin: 0;
+}
+.book-container .thumbnail .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    background-color: var(--color-black-coffee-40);
+    transition: all 0.5s;
+    transform: translateY(500px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.book-container .thumbnail:hover .overlay {
+    transform: translateY(0px);
+}

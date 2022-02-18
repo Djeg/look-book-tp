@@ -21,7 +21,7 @@
     <a href="" class="item {% if active_menu == "addresses" %}active{% endif %}">
         Mes Adreses
     </a>
-    <a href="" class="item {% if active_menu == "books" %}active{% endif %}">
+    <a href="{{ path('app_front_user_myBooks') }}" class="item {% if active_menu == "books" %}active{% endif %}">
         Mes Livres
     </a>
     <a href="" class="item {% if active_menu == "orders" %}active{% endif %}">

@@ -1,0 +1,33 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}LookBook - Mon Panier{% endblock %}
+
+{% block content %}
+
+<div class="left-menu-layout">
+    {% include 'front/user/_profilMenu.html.twig' with {
+        menu: 'basket',
+    } %}
+    <div class="container">
+        <h1>Mon Panier</h1>
+        {% if app.user.basket.books|length == 0 %}
+            <p>Votre panier est vide</p>
+        {% else %}
+            <div class="book-container">
+                {% for book in app.user.basket.books %}
+                    {% include 'front/user/_bookThumb.html.twig' with {
+                        'book': book,
+                        'display_mode': 'basket',
+                    } %}
+                {% endfor %}
+            </div>
+            <p>
+                <a href="" class="btn success">
+                    Payer {{ app.user.basket.books|map(b => b.price)|reduce((t, p) => t + p, 0) }} €
+                </a>
+            </p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

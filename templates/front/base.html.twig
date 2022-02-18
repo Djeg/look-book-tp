@@ -30,13 +30,18 @@
             <a href="{{ path('app_front_user_profil') }}" class="item">
                 <i class="fa-solid fa-circle-user"></i>
             </a>
-            <a href="" class="item">
+            <a href="{{ path('app_front_user_basket') }}" class="item">
                 <i class="fa-solid fa-basket-shopping"></i>
+                {% if is_granted('ROLE_USER') and app.user.basket.books|length > 0 %}
+                    <p class="basket">
+                        {{ app.user.basket.books|length }}
+                    </p>
+                {% endif %}
             </a>
             {% if is_granted("ROLE_ADMIN") %}
-            <a href="{{ path('app_admin_home_index') }}" class="item">
-                <i class="fa-solid fa-bug"></i>
-            </a>
+                <a href="{{ path('app_admin_home_index') }}" class="item">
+                    <i class="fa-solid fa-bug"></i>
+                </a>
             {% endif %}
         </div>
     </header>

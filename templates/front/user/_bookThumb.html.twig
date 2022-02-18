@@ -1,3 +1,5 @@
+{% set mode = display_mode|default('none') %}
+
 <div class="thumbnail" onClick="((e) => window.location.href = '{{ path('app_front_book_show', {slug: book.slug}) }}')(this)">
     <div class="img" >
         <img src="{{ book.image }}" alt="{{ book.title }}" />
@@ -14,10 +16,16 @@
         </a>
         <div class="container">
             <div class="boutons">
-                <a href="" class="btn success"  onClick="(e => e.stopPropagation())(this)">
-                    {{ book.price }} €&nbsp;
-                    <i class="fa-solid fa-cart-arrow-down"></i>
-                </a>
+                {% if mode == 'basket' %}
+                    <a href="{{ path('app_front_user_addToBasket', {slug: book.slug, from: app.request.uri }) }}" class="btn error"  onClick="(e => e.stopPropagation())(this)">
+                        Supprimer du panier
+                    </a>
+                {% else %}
+                    <a href="{{ path('app_front_user_addToBasket', {slug: book.slug, from: app.request.uri }) }}" class="btn success"  onClick="(e => e.stopPropagation())(this)">
+                        {{ book.price }} €&nbsp;
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>

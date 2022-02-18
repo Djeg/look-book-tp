@@ -65,10 +65,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
     #[ORM\OneToMany(mappedBy: 'reseller', targetEntity: Book::class, orphanRemoval: true)]
     private $books;
 
+    #[ORM\OneToOne(mappedBy: 'user', targetEntity: Basket::class, cascade: ['persist', 'remove'])]
+    private $basket;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
         $this->books = new ArrayCollection();
+        $this->setBasket(new Basket());
     }
 
     public function getId(): ?int
@@ -310,6 +314,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Updatab
                 $book->setReseller(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getBasket(): ?Basket
+    {
+        return $this->basket;
+    }
+
+    public function setBasket(Basket $basket): self
+    {
+        // set the owning side of the relation if necessary
+        if ($basket->getUser() !== $this) {
+            $basket->setUser($this);
+        }
+
+        $this->basket = $basket;
 
         return $this;
     }

@@ -2,6 +2,8 @@
 
 namespace App\Controller\Front;
 
+use App\Entity\Basket;
+use App\Entity\Book;
 use App\Entity\User;
 use App\Form\Front\UserProfilType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -108,5 +110,60 @@ class UserController extends AbstractController
         return $this->render('front/user/seeBooks.html.twig', [
             'user' => $user,
         ]);
+    }
+
+    #[IsGranted("ROLE_USER")]
+    #[Route("/mon-panier", name: "app_front_user_basket")]
+    public function basket(): Response
+    {
+        return $this->render('front/user/basket.html.twig');
+    }
+
+    #[IsGranted("ROLE_USER")]
+    #[Route("/mon-panier/{slug}/ajouter", name: "app_front_user_addToBasket")]
+    public function addToBasket(
+        EntityManagerInterface $manager,
+        Book $book,
+        Request $request,
+    ): Response {
+        /** @var User */
+        $user = $this->getUser();
+        /** @var Basket */
+        $basket = $user->getBasket();
+
+        $basket->addBook($book);
+
+        $manager->persist($basket);
+        $manager->flush();
+
+        return $this->redirect(
+            $request->query->has('from')
+                ? $request->query->get('from')
+                : $this->generateUrl('app_front_user_basket')
+        );
+    }
+
+    #[IsGranted("ROLE_USER")]
+    #[Route("/mon-panier/{slug}/supprimer", name: "app_front_user_removeFromBasket")]
+    public function removeFromBasket(
+        EntityManagerInterface $manager,
+        Book $book,
+        Request $request,
+    ): Response {
+        /** @var User */
+        $user = $this->getUser();
+        /** @var Basket */
+        $basket = $user->getBasket();
+
+        $basket->removeBook($book);
+
+        $manager->persist($basket);
+        $manager->flush();
+
+        return $this->redirect(
+            $request->query->has('from')
+                ? $request->query->get('from')
+                : $this->generateUrl('app_front_user_basket')
+        );
     }
 }

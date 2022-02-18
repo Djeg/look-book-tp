@@ -44,6 +44,24 @@ body {
 .header .container a.item i {
     font-size: 1.3rem;
 }
+.header .container .item {
+    position: relative;
+}
+
+.header .container .item .basket {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
 /* CONTENT */
 main.content {
